@@ -1,6 +1,6 @@
 ---
 title: Introduction
-categories: intro
+categories: whatever
 tags: intro hello
 pagedesc: 
 ---

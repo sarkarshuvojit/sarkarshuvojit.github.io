@@ -13,7 +13,7 @@ github_username:    sarkarshuvojit # Your GitHub username here
 
 # Site Settings
 baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
-permalink:          /posts/:title # Post permalink
+permalink:          /post/:categories/:title # Post permalink
 timezone:           Asia/Kolkata # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 mathjax:            false  # enables support for mathjax - set to false to disable
 # Site Build
