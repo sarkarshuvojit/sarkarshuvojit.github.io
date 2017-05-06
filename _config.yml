@@ -1,5 +1,5 @@
 # Site Info
-title:              "tail -f blog.log"
+title:              "Error Log"
 description:        "a blog about code, food and life."
 google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
 google_analytics:   UA-98362254-1 # Put your Google Analytics code
@@ -13,10 +13,9 @@ github_username:    sarkarshuvojit # Your GitHub username here
 
 # Site Settings
 baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
-permalink:          /notes/:title # Post permalink
+permalink:          /posts/:title # Post permalink
 timezone:           Asia/Kolkata # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 mathjax:            false  # enables support for mathjax - set to false to disable
-
 # Site Build
 highlighter:        rouge
 markdown:           kramdown

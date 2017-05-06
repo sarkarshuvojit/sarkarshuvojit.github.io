@@ -4,9 +4,20 @@ The Plain is a minimalist Jekyll theme, designed to focus on writing that really
 
 [**Live Demo**](http://heiswayi.github.io/the-plain/)
 
+```java
+import java.io.*;
+class abc{
+    public static void main(String[] args)throws IOException{
+        System.out.println("Hello, World");
+    }
+}
+```
+
 ### Screenshot
 
 ![The Plain Screenshot](http://i.imgur.com/8ZXhjfV.png)
+
+
 
 ### Philosophy
 
