@@ -12,3 +12,12 @@
 .fa-linkedin:hover{
   color: #0077B5;
 }
+article h2, article h3{
+  text-decoration: underline;
+}
+article ul{
+  padding-left: 40px;
+}
+article ul li ul{
+  margin: 0px;
+}
