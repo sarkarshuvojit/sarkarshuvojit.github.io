@@ -9,7 +9,7 @@ This will be your About page. Anything about you, it should be written here in d
 
 
 {:whatever: style="font-weight: bold"}
-Stop reading boilerplate about page, [read some of my awesome posts]({{ site.url }}).
+Stop reading boilerplate about page, [read some of my awesome posts]({{ site.baseurl }}).
 {:whatever}
 
 {:center: style="text-align: center"}
