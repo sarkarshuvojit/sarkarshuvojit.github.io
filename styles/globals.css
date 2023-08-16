@@ -1,0 +1,57 @@
+@import "../public/css/base.css?ver=4";
+@import "../public/css/owl-carousel.css?ver=4";
+@import "../public/css/style.css?ver=4";
+@import "swiper/css";
+
+.owl-carousel {
+  display: block;
+}
+.typed-cursor {
+  display: none;
+}
+.right_in::-webkit-scrollbar {
+  width: 0px;
+  /* Track */
+}
+.right_in {
+  overflow: scroll;
+  height: calc(100% - 0px);
+}
+.resumo_fn_modalbox .img_holder img {
+  margin-bottom: -50% !important;
+  min-width: 100% !important;
+  max-height: unset !important;
+}
+
+#send_message {
+  /* border-color: rgba(0, 0, 0, 0.2);
+  color: #333; */
+  background: none;
+  width: 100%;
+  line-height: 0;
+  padding: 30px;
+}
+.light #send_message {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+#send_message:hover {
+  border-color: var(--mc);
+  color: var(--mc);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.h3 {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 30px;
+  min-height: 36px;
+  position: relative;
+  font-family: Jost;
+  color: #ddd;
+}
+.light .h3 {
+  color: #000;
+}
