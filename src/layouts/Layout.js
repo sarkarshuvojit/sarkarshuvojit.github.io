@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
 import PanelContent from "../components/PanelContent";
+import texts from "../constants/texts";
 import { aTagClick, customCursor, dataImage, sticky } from "../utilits";
 import Cursor from "./Cursor";
 import Footer from "./Footer";
@@ -22,7 +23,7 @@ const Layout = ({ children }) => {
   return (
     <Fragment>
       <Head>
-        <title>Resumo Home | Personal Portfolio React NextJS Template</title>
+        <title>{texts.appTitle}</title>
       </Head>
       <div className="resumo_fn_wrapper">
         {/* MODALBOX */}

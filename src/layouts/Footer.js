@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="container">
           <p>
             Copyright © {new Date().getFullYear()}. All rights reserved. <br />
-            Developed by{" "}
+            Template by{" "}
             <a
               className="fn__link"
               href="https://themeforest.net/user/trendycoder"
