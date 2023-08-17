@@ -6,13 +6,10 @@ const Home = () => {
           {/* Main Title */}
           <div className="resumo_fn_main_title">
             <h3 className="subtitle">Introduction</h3>
-            <h3 className="title">UI/UX Designer</h3>
+            <h3 className="title">Shuvojit Sarkar</h3>
             <p className="desc">
-              I design and develop services for customers of all sizes,
-              specializing in creating stylish, modern websites, web services
-              and online stores.
+              I am a polyglot programmer working across the stack, specialising in backend architecture, design & development; with a knack for improving developer productivity with scripts.
             </p>
-            <img src="img/signature.png" alt="image" />
           </div>
           {/* /Main Title */}
         </div>

@@ -12,10 +12,8 @@ const About = () => {
             <h3 className="subtitle">About Me</h3>
             <h3 className="title">Biography</h3>
             <p className="desc">
-              {`I'm a Freelancer Front-end Developer with over 12 years
-                        of experience. I'm from San Francisco. I code and create
-                        web elements for amazing people around the world. I like
-                        work with new people. New people are new experiences.`}
+              I'm a Full Stack Developer with over 5 years of full time experience, I was also part of multiple internships during my college.  <br/>
+    My daily works involves building scalable & distributed backend services.
             </p>
           </div>
           {/* /Main Title */}
@@ -242,14 +240,14 @@ const About = () => {
               <div id="tab3" className={`tab_item ${activeList("tab3")}`}>
                 {/* Progress Bar */}
                 <div className="resumo_fn_progress_bar">
-                  <div className="progress_item open" data-value={92}>
+                  <div className="progress_item open" data-value={70}>
                     <div className="item_in">
-                      <h3 className="progress_title">Adobe Photoshop</h3>
+                      <h3 className="progress_title">Backend Engineering</h3>
                       <span
                         className="progress_percent"
-                        style={{ right: "8%" }}
+                        style={{ right: "20%" }}
                       >
-                        92%
+                        70%
                       </span>
                       <div className="bg_wrap">
                         <div className="progress_bg" style={{ width: "92%" }} />

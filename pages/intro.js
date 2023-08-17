@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Fragment, useEffect } from "react";
 import Cursor from "../src/layouts/Cursor";
 import { customCursor } from "../src/utilits";
+import texts from "../src/constants/texts";
 
 const Intro = () => {
   useEffect(() => {
@@ -12,7 +13,7 @@ const Intro = () => {
   return (
     <Fragment>
       <Head>
-        <title>Resumo Intro | Personal Portfolio React NextJS Template</title>
+        <title>{texts.appTitle}</title>
       </Head>
       <div className="resumo_fn_intro">
         <div className="divider"></div>
