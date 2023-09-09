@@ -9,9 +9,11 @@ import (
 )
 
 func TestLoadSinglePost(t *testing.T) {
-	dummySrc, err := os.ReadFile(filepath.Join("testdata/medium/single.post.xml"))
+	absFilePath := filepath.Join("testdata/medium/single.post.xml")
+
+	dummySrc, err := os.ReadFile(absFilePath)
 	if err != nil {
-		t.Error(err)
+		t.Error("Failed Reading:", err)
 	}
 
 	loader := loaders.MediumLoader{}
