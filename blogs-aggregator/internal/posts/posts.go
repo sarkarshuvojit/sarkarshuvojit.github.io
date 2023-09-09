@@ -8,6 +8,7 @@ import (
 
 type Post struct {
 	ID               string `json:"id"`
+	Title            string `json:"title"`
 	Slug             string `json:"slug"`
 	ShortDescription string `json:"shortDescription"`
 	OgUrl            string `json:"ogUrl"`

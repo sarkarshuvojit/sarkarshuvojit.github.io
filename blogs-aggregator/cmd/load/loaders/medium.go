@@ -20,7 +20,7 @@ func (ml MediumLoader) Load(src []byte) ([]posts.Post, error) {
 	for i := range feed.Items {
 		feedItem := feed.Items[i]
 		postList = append(postList, posts.Post{
-			Slug: feedItem.Title,
+			Title: feedItem.Title,
 		})
 	}
 
