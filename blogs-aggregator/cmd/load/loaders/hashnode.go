@@ -8,7 +8,7 @@ import (
 
 type HashnodeLoader struct{}
 
-func (ml HashnodeLoader) load(src []byte) ([]posts.Post, error) {
+func (ml HashnodeLoader) Load(src []byte) ([]posts.Post, error) {
 	time.Sleep(time.Second * 1)
 	return nil, nil
 }
