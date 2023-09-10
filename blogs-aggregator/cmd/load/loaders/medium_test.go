@@ -31,11 +31,21 @@ func TestLoadSinglePost(t *testing.T) {
 	t.Run("Content should be accurate", func(t *testing.T) {
 		firstPost := postList[0]
 		expectedPost := posts.Post{
-			Title: "How to make sense of error logs?",
+			Title:      "How to make sense of error logs?",
+			OgUrl:      "https://blog.shuvojit.in/how-to-make-sense-of-error-logs",
+			OgImageUrl: "https://cdn.hashnode.com/res/hashnode/image/upload/v1664317485225/5bRqh4brb.png",
 		}
 
 		if firstPost.Title != expectedPost.Title {
 			t.Errorf("Expected `%s`, got `%s`", expectedPost.Title, firstPost.Title)
+		}
+
+		if firstPost.OgUrl != expectedPost.OgUrl {
+			t.Errorf("Expected `%s`, got `%s`", expectedPost.OgUrl, firstPost.OgUrl)
+		}
+
+		if firstPost.OgImageUrl != expectedPost.OgImageUrl {
+			t.Errorf("Expected `%s`, got `%s`", expectedPost.OgImageUrl, firstPost.OgImageUrl)
 		}
 	})
 

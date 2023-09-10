@@ -20,7 +20,9 @@ func (ml MediumLoader) Load(src []byte) ([]posts.Post, error) {
 	for i := range feed.Items {
 		feedItem := feed.Items[i]
 		postList = append(postList, posts.Post{
-			Title: feedItem.Title,
+			Title:      feedItem.Title,
+			OgUrl:      feedItem.Link,
+			OgImageUrl: feedItem.Custom["cover_image"],
 		})
 	}
 
