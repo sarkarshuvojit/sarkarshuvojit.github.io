@@ -9,10 +9,9 @@ import (
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/posts"
 )
 
-func TestMediumLoadSinglePost(t *testing.T) {
-	t.SkipNow()
+func TestHashnodeLoadSinglePost(t *testing.T) {
 	// Given
-	absFilePath := filepath.Join("testdata/medium/single.post.xml")
+	absFilePath := filepath.Join("testdata/hashnode/single.post.xml")
 	dummySrc, err := os.ReadFile(absFilePath)
 	if err != nil {
 		t.Error("Failed Reading:", err)
