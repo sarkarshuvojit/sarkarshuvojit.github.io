@@ -9,7 +9,8 @@ import (
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/posts"
 )
 
-func TestLoadSinglePost(t *testing.T) {
+func TestMediumLoadSinglePost(t *testing.T) {
+	// Given
 	absFilePath := filepath.Join("testdata/medium/single.post.xml")
 	dummySrc, err := os.ReadFile(absFilePath)
 	if err != nil {
@@ -22,6 +23,7 @@ func TestLoadSinglePost(t *testing.T) {
 		t.Error("Failed parsing", err)
 	}
 
+	// Assertions
 	t.Run("length should match", func(t *testing.T) {
 		if len(postList) != 1 {
 			t.Errorf("Expected 1 post, got %d", len(postList))
