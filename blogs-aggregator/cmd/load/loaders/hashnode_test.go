@@ -18,7 +18,7 @@ func TestHashnodeLoadSinglePost(t *testing.T) {
 	}
 
 	loader := loaders.HashnodeLoader{}
-	postList, err := loader.Load(dummySrc)
+	postList, err := loader.Parse(dummySrc)
 	if err != nil {
 		t.Error("Failed parsing", err)
 	}

@@ -9,7 +9,8 @@ import (
 )
 
 type Loader interface {
-	Load(src []byte) ([]posts.Post, error)
+	Parse(src []byte) ([]posts.Post, error)
+	Load([]posts.Post) error
 }
 
 type LoadConfig struct {
@@ -35,7 +36,7 @@ func (lc LoadConfig) Load() error {
 		return err
 	}
 
-	lc.loader.Load(content)
+	lc.loader.Parse(content)
 
 	log.Printf("Loaded URL : %s", lc.url)
 	lc.wg.Done()

@@ -9,7 +9,7 @@ import (
 
 type HashnodeLoader struct{}
 
-func (ml HashnodeLoader) Load(src []byte) ([]posts.Post, error) {
+func (ml HashnodeLoader) Parse(src []byte) ([]posts.Post, error) {
 	fp := gofeed.NewParser()
 	feed, err := fp.Parse(bytes.NewReader(src))
 	if err != nil {

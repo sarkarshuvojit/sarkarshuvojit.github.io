@@ -10,7 +10,7 @@ import (
 
 type MediumLoader struct{}
 
-func (ml MediumLoader) Load(src []byte) ([]posts.Post, error) {
+func (ml MediumLoader) Parse(src []byte) ([]posts.Post, error) {
 	re := regexp.MustCompile(`(?m)src="(.*?)"`)
 	fp := gofeed.NewParser()
 	feed, err := fp.Parse(bytes.NewReader(src))
