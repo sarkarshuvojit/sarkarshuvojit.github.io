@@ -2,6 +2,7 @@ package loaders
 
 import (
 	"bytes"
+	"regexp"
 
 	"github.com/mmcdole/gofeed"
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/posts"
@@ -10,6 +11,7 @@ import (
 type MediumLoader struct{}
 
 func (ml MediumLoader) Load(src []byte) ([]posts.Post, error) {
+	re := regexp.MustCompile(`(?m)src="(.*?)"`)
 	fp := gofeed.NewParser()
 	feed, err := fp.Parse(bytes.NewReader(src))
 	if err != nil {
@@ -19,10 +21,13 @@ func (ml MediumLoader) Load(src []byte) ([]posts.Post, error) {
 	var postList []posts.Post
 	for i := range feed.Items {
 		feedItem := feed.Items[i]
+		content := feedItem.Content
+		matchFromContent := re.FindStringSubmatch(content)
+		ogImageUrl := matchFromContent[1]
 		postList = append(postList, posts.Post{
 			Title:      feedItem.Title,
 			OgUrl:      feedItem.Link,
-			OgImageUrl: feedItem.Custom["cover_image"],
+			OgImageUrl: ogImageUrl,
 		})
 	}
 

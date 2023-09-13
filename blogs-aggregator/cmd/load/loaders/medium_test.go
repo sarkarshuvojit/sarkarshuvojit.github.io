@@ -10,8 +10,6 @@ import (
 )
 
 func TestMediumLoadSinglePost(t *testing.T) {
-	t.SkipNow()
-	// Given
 	absFilePath := filepath.Join("testdata/medium/single.post.xml")
 	dummySrc, err := os.ReadFile(absFilePath)
 	if err != nil {
@@ -34,9 +32,9 @@ func TestMediumLoadSinglePost(t *testing.T) {
 	t.Run("Content should be accurate", func(t *testing.T) {
 		firstPost := postList[0]
 		expectedPost := posts.Post{
-			Title:      "How to make sense of error logs?",
-			OgUrl:      "https://blog.shuvojit.in/how-to-make-sense-of-error-logs",
-			OgImageUrl: "https://cdn.hashnode.com/res/hashnode/image/upload/v1664317485225/5bRqh4brb.png",
+			Title:      "5 ways to write cleaner Angular Code: Part I",
+			OgUrl:      "https://codeburst.io/5-ways-to-write-cleaner-angular-code-part-i-8a5339a3e957?source=rss-28b91177e737------2",
+			OgImageUrl: "https://cdn-images-1.medium.com/max/1024/1*R1X2RDWnYr70_aCO05mHcg.jpeg",
 		}
 
 		if firstPost.Title != expectedPost.Title {
