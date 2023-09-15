@@ -2,7 +2,6 @@ package loaders
 
 import (
 	"log"
-	"sync"
 
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/posts"
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/utils"
@@ -10,35 +9,35 @@ import (
 
 type Loader interface {
 	Parse(src []byte) ([]posts.Post, error)
-	Load([]posts.Post) error
 }
 
 type LoadConfig struct {
 	url    string
 	loader Loader
-	wg     *sync.WaitGroup
 }
 
-func NewLoadConfig(url string, loader Loader, wg *sync.WaitGroup) *LoadConfig {
+func NewLoadConfig(url string, loader Loader) *LoadConfig {
 	return &LoadConfig{
 		url:    url,
 		loader: loader,
-		wg:     wg,
 	}
 }
 
-func (lc LoadConfig) Load() error {
+func (lc LoadConfig) Load(postsChan chan []posts.Post, errChan chan error) {
 	log.Printf("Loading URL : %s", lc.url)
 	log.Printf("Loading with config: %v", lc)
 
 	content, err := utils.GetRssContent(lc.url)
 	if err != nil {
-		return err
+		errChan <- err
+		return
 	}
 
-	lc.loader.Parse(content)
+	postlist, err := lc.loader.Parse(content)
+	if err != nil {
+		errChan <- err
+	}
 
 	log.Printf("Loaded URL : %s", lc.url)
-	lc.wg.Done()
-	return nil
+	postsChan <- postlist
 }

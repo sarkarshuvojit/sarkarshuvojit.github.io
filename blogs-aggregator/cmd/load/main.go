@@ -2,36 +2,59 @@ package main
 
 import (
 	"fmt"
-	"sync"
 
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/cmd/load/loaders"
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/constants"
+	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/posts"
 )
 
 func main() {
-	var wg sync.WaitGroup
-	wg.Add(2)
 
 	mediumLC := loaders.NewLoadConfig(
 		constants.MEDIUM_RSS_URL,
 		loaders.MediumLoader{},
-		&wg,
 	)
 	hashnodeLC := loaders.NewLoadConfig(
 		constants.HASHNODE_RSS_URL,
 		loaders.HashnodeLoader{},
-		&wg,
 	)
 
 	sources := []*loaders.LoadConfig{
 		mediumLC, hashnodeLC,
 	}
 
-	for i := range sources {
-		source := sources[i]
-		go source.Load()
+	postlist := getPosts(sources)
+	fmt.Printf("Total posts: %d\n", len(postlist))
+
+}
+
+func getPosts(sources []*loaders.LoadConfig) (postlist []posts.Post) {
+	var (
+		postsChan = make(chan []posts.Post)
+		errChan   = make(chan error)
+	)
+
+	for _, source := range sources {
+		go source.Load(postsChan, errChan)
 	}
 
-	wg.Wait()
-	fmt.Println("Done")
+	resultsExpected := len(sources)
+
+	for {
+		select {
+		case err := <-errChan:
+			fmt.Printf("Error Happened: %v\n", err)
+			return
+		case postChunk := <-postsChan:
+			fmt.Printf("Found Posts: %d\n", len(postChunk))
+			for _, p := range postChunk {
+				postlist = append(postlist, p)
+			}
+			resultsExpected = resultsExpected - 1
+
+			if resultsExpected == 0 {
+				return
+			}
+		}
+	}
 }
