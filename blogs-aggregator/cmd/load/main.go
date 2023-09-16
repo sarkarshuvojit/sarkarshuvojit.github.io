@@ -1,14 +1,22 @@
 package main
 
 import (
+	"context"
+	"flag"
 	"fmt"
+	"io"
+	"log"
+	"os"
 
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/cmd/load/loaders"
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/constants"
-	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/posts"
+	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/db"
+	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/models/posts"
 )
 
 func main() {
+
+	setVerbosity()
 
 	mediumLC := loaders.NewLoadConfig(
 		constants.MEDIUM_RSS_URL,
@@ -26,6 +34,23 @@ func main() {
 	postlist := getPosts(sources)
 	fmt.Printf("Total posts: %d\n", len(postlist))
 
+	if err := storePosts(postlist); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	fmt.Println("Stored posts!! Bye.")
+}
+
+// Parses flags and reads --verbose
+// If not found then all log output is sent to io.Discard
+func setVerbosity() {
+	isVerbose := flag.Bool("v", false, "Enable to view detailed logs")
+	flag.Parse()
+
+	if !*isVerbose {
+		log.SetOutput(io.Discard)
+	}
 }
 
 func getPosts(sources []*loaders.LoadConfig) (postlist []posts.Post) {
@@ -57,4 +82,16 @@ func getPosts(sources []*loaders.LoadConfig) (postlist []posts.Post) {
 			}
 		}
 	}
+}
+
+func storePosts(postList []posts.Post) error {
+	db, err := db.GetClient(context.TODO(), os.Getenv("MONGO_CONN"))
+	if err != nil {
+		log.Println("Couldn't connect to mongo")
+		return err
+	}
+	postsRepo := posts.NewPostRepository(db)
+
+	log.Printf("Trying to save %d posts.", len(postList))
+	return postsRepo.SaveAll(postList)
 }

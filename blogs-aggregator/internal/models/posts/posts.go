@@ -4,6 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"time"
+
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 type Post struct {
@@ -18,16 +20,30 @@ type Post struct {
 }
 
 type PostRepository interface {
-	get(id string) (Post, error)
-	getAll() ([]Post, error)
+	Get(id string) (Post, error)
+	GetAll() ([]Post, error)
+
+	SaveAll([]Post) error
 }
 
-type PostRepositoryMongo struct{}
+type PostRepositoryMongo struct {
+	client *mongo.Client
+}
 
-func (p PostRepositoryMongo) get(id string) (*Post, error) {
+func NewPostRepository(client *mongo.Client) *PostRepositoryMongo {
+	return &PostRepositoryMongo{
+		client: client,
+	}
+}
+
+func (p PostRepositoryMongo) Get(id string) (*Post, error) {
 	return nil, errors.New(fmt.Sprintf("Unimplemented method"))
 }
 
 func (p PostRepositoryMongo) getAll() ([]Post, error) {
 	return nil, errors.New(fmt.Sprintf("Unimplemented method"))
+}
+
+func (p PostRepositoryMongo) SaveAll(newPosts []Post) error {
+	return errors.New(fmt.Sprintf("Unimplemented method"))
 }
