@@ -17,6 +17,7 @@ import (
 func main() {
 
 	setVerbosity()
+	initSchema()
 
 	mediumLC := loaders.NewLoadConfig(
 		constants.MEDIUM_RSS_URL,
@@ -86,6 +87,8 @@ func getPosts(sources []*loaders.LoadConfig) (postlist []posts.Post) {
 
 func storePosts(postList []posts.Post) error {
 	db, err := db.GetClient(context.TODO(), os.Getenv("MONGO_CONN"))
+	defer db.Disconnect(context.TODO())
+
 	if err != nil {
 		log.Println("Couldn't connect to mongo")
 		return err
@@ -94,4 +97,18 @@ func storePosts(postList []posts.Post) error {
 
 	log.Printf("Trying to save %d posts.", len(postList))
 	return postsRepo.SaveAll(postList)
+}
+
+func initSchema() error {
+	client, err := db.GetClient(context.TODO(), os.Getenv("MONGO_CONN"))
+	defer client.Disconnect(context.TODO())
+
+	if err != nil {
+		log.Println("Couldn't connect to mongo")
+		return err
+	}
+
+	log.Println("Loading schema")
+	db.InitSchema(context.TODO(), client)
+	return nil
 }
