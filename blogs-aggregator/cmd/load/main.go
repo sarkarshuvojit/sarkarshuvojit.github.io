@@ -12,6 +12,7 @@ import (
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/constants"
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/db"
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/models/posts"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 func main() {
@@ -96,7 +97,23 @@ func storePosts(postList []posts.Post) error {
 	postsRepo := posts.NewPostRepository(db)
 
 	log.Printf("Trying to save %d posts.", len(postList))
-	return postsRepo.SaveAll(postList)
+
+	newPostsCount := 0
+
+	for _, p := range postList {
+		if err := postsRepo.Save(p); err != nil {
+			if mongo.IsDuplicateKeyError(err) {
+				log.Printf("Already saved %v\n", p)
+				continue
+			} else {
+				return err
+			}
+		}
+		newPostsCount++
+	}
+
+	log.Printf("Saved %d/%d posts", newPostsCount, len(postList))
+	return nil
 }
 
 func initSchema() error {

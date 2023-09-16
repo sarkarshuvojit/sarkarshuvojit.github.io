@@ -24,6 +24,7 @@ type PostRepository interface {
 	Get(id string) (Post, error)
 	GetAll() ([]Post, error)
 
+	Save(Post) error
 	SaveAll([]Post) error
 }
 
@@ -64,5 +65,17 @@ func (p PostRepositoryMongo) SaveAll(newPosts []Post) error {
 	}
 
 	log.Printf("Created IDs: %v\n", results.InsertedIDs)
+	return nil
+}
+
+func (p PostRepositoryMongo) Save(newPost Post) error {
+	coll := p.client.Database("sarkarshuvojit_github").Collection("posts")
+	result, err := coll.InsertOne(context.TODO(), newPost)
+	if err != nil {
+		log.Println("Could not save item to db")
+		return err
+	}
+
+	log.Printf("Created ID: %v\n", result.InsertedID)
 	return nil
 }
