@@ -7,11 +7,10 @@ async function getAllPosts() {
 }
 
 export function usePosts() {
-  const { data: posts, loading, error } = useQuery('getAllPosts', getAllPosts);
-  console.log("[usePosts]", "Got response", posts);
+  const { data: posts, isLoading, error } = useQuery('getAllPosts', getAllPosts);
   return {
     posts,
-    loading,
+    isLoading,
     error
   }
 }

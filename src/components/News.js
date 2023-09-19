@@ -1,37 +1,13 @@
-import { useState } from "react";
+import {memo} from "react";
 import {usePosts} from "../services/posts";
-import NewsModalbox from "./NewsModalbox";
 
 const News = () => {
-  const [load, setLoad] = useState(false);
-  const [hiddenItem, setHiddenItem] = useState(true);
-  const [focusValue, setFocusValue] = useState("");
-  const { posts, loading, error } = usePosts();
-  const focusValueChange = () => {
-    if (!hiddenItem) {
-      setFocusValue("No more articles found");
-    }
-  };
-
-  if (loading) {
-    <section id="news">
-      <p>Loading...</p>
-    </section>
-  }
-
+  const { posts, isLoading, error } = usePosts();
 
   if (error) {
     console.error("Error:", error);
   }
 
-  if (!posts) {
-    console.info("[News] Posts:", posts);
-    return <section id="news">
-      <div className="container">
-        <p>No Posts found</p>
-      </div>
-    </section>;
-  }
 
   return (
     <section id="news">
@@ -45,7 +21,8 @@ const News = () => {
           {/* /Main Title */}
           {/* Blog List */}
           <div className="resumo_fn_blog_list">
-            <ul className="modal_items" data-from="blog" data-count={posts.length}>
+            {isLoading && <p>Loading...</p>}
+            <ul className="modal_items" data-from="blog" data-count={posts?.length || 6}>
               {posts && posts.map((p, idx) => <li key={idx}>
                 <div
                   className="item modal_item"
@@ -102,4 +79,21 @@ const News = () => {
   );
 };
 
-export default News;
+function ArticleSkeleton(idx) {
+  return <div className="item modal_item" data-index={idx}>
+      <div className="img_holder">
+        <img src="img/thumb/square.jpg" alt="image" />
+        <div className="abs_img skeleton-box" style={{height: "100%"}}/>
+      </div>
+      <div className="title_holder">
+        <p className="skeleton-box" style={{width: "100px"}}></p>
+        <h3>
+          <a href="#">gg
+          </a>
+        </h3>
+      </div>
+    </div>
+
+}
+
+export default memo(News)
