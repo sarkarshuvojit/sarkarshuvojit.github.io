@@ -7,10 +7,7 @@ import (
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/loaders"
 )
 
-type MyEvent struct {
-}
-
-func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
+func HandleRequest(ctx context.Context, _ interface{}) (string, error) {
 	l := loaders.NewLoaderService()
 	if err := l.Start(); err != nil {
 		return err.Error(), err
