@@ -12,9 +12,13 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-type LoadService struct{}
+type LoaderService struct{}
 
-func (l LoadService) getPosts(sources []*LoadConfig) (postlist []posts.Post) {
+func NewLoaderService() *LoaderService {
+	return &LoaderService{}
+}
+
+func (l LoaderService) getPosts(sources []*LoadConfig) (postlist []posts.Post) {
 	var (
 		postsChan = make(chan []posts.Post)
 		errChan   = make(chan error)
@@ -45,7 +49,7 @@ func (l LoadService) getPosts(sources []*LoadConfig) (postlist []posts.Post) {
 	}
 }
 
-func (l LoadService) storePosts(postList []posts.Post) error {
+func (l LoaderService) storePosts(postList []posts.Post) error {
 	db, err := db.GetClient(context.TODO(), os.Getenv("MONGO_CONN"))
 	defer db.Disconnect(context.TODO())
 
@@ -75,7 +79,7 @@ func (l LoadService) storePosts(postList []posts.Post) error {
 	return nil
 }
 
-func (l LoadService) initSchema() error {
+func (l LoaderService) initSchema() error {
 	client, err := db.GetClient(context.TODO(), os.Getenv("MONGO_CONN"))
 	defer client.Disconnect(context.TODO())
 
@@ -89,7 +93,7 @@ func (l LoadService) initSchema() error {
 	return nil
 }
 
-func (l LoadService) Start() error {
+func (l LoaderService) Start() error {
 	l.initSchema()
 
 	mediumLC := NewLoadConfig(

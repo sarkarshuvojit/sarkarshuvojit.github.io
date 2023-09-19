@@ -13,7 +13,7 @@ import (
 func main() {
 	setVerbosity()
 
-	l := loaders.LoadService{}
+	l := loaders.NewLoaderService()
 	if err := l.Start(); err != nil {
 		fmt.Println("Error:", err)
 		os.Exit(1)

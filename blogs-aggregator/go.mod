@@ -7,6 +7,7 @@ require go.mongodb.org/mongo-driver v1.12.1
 require (
 	github.com/PuerkitoBio/goquery v1.8.0 // indirect
 	github.com/andybalholm/cascadia v1.3.1 // indirect
+	github.com/aws/aws-lambda-go v1.41.0
 	github.com/golang/snappy v0.0.1 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
