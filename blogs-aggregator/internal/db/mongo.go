@@ -3,6 +3,7 @@ package db
 import (
 	"context"
 	"log"
+	"os"
 
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/constants"
 	"go.mongodb.org/mongo-driver/bson"
@@ -10,7 +11,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func GetClient(ctx context.Context, uri string) (*mongo.Client, error) {
+func GetClient(ctx context.Context) (*mongo.Client, error) {
+	uri := os.Getenv("MONGO_CONN")
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	opts := options.Client().ApplyURI(uri).SetServerAPIOptions(serverAPI)
 

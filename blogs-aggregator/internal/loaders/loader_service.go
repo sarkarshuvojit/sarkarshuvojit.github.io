@@ -50,7 +50,7 @@ func (l LoaderService) getPosts(sources []*LoadConfig) (postlist []posts.Post) {
 }
 
 func (l LoaderService) storePosts(postList []posts.Post) error {
-	db, err := db.GetClient(context.TODO(), os.Getenv("MONGO_CONN"))
+	db, err := db.GetClient(context.TODO())
 	defer db.Disconnect(context.TODO())
 
 	if err != nil {

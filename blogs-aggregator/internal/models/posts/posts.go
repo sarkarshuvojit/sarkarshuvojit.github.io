@@ -7,6 +7,7 @@ import (
 	"log"
 	"time"
 
+	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -30,11 +31,13 @@ type PostRepository interface {
 
 type PostRepositoryMongo struct {
 	client *mongo.Client
+	coll   *mongo.Collection
 }
 
 func NewPostRepository(client *mongo.Client) *PostRepositoryMongo {
 	return &PostRepositoryMongo{
 		client: client,
+		coll:   client.Database("sarkarshuvojit_github").Collection("posts"),
 	}
 }
 
@@ -52,13 +55,22 @@ func (p PostRepositoryMongo) Get(id string) (*Post, error) {
 	return nil, errors.New(fmt.Sprintf("Unimplemented method"))
 }
 
-func (p PostRepositoryMongo) getAll() ([]Post, error) {
-	return nil, errors.New(fmt.Sprintf("Unimplemented method"))
+func (p PostRepositoryMongo) GetAll() ([]Post, error) {
+	cursor, err := p.coll.Find(context.TODO(), bson.D{})
+	if err != nil {
+		return nil, err
+	}
+
+	var postlist []Post
+	if err = cursor.All(context.TODO(), &postlist); err != nil {
+		return nil, err
+	}
+
+	return postlist, nil
 }
 
 func (p PostRepositoryMongo) SaveAll(newPosts []Post) error {
-	coll := p.client.Database("sarkarshuvojit_github").Collection("posts")
-	results, err := coll.InsertMany(context.TODO(), p.toInterfaceSlice(newPosts))
+	results, err := p.coll.InsertMany(context.TODO(), p.toInterfaceSlice(newPosts))
 	if err != nil {
 		log.Println("Could not save to db")
 		return err
@@ -69,8 +81,7 @@ func (p PostRepositoryMongo) SaveAll(newPosts []Post) error {
 }
 
 func (p PostRepositoryMongo) Save(newPost Post) error {
-	coll := p.client.Database("sarkarshuvojit_github").Collection("posts")
-	result, err := coll.InsertOne(context.TODO(), newPost)
+	result, err := p.coll.InsertOne(context.TODO(), newPost)
 	if err != nil {
 		log.Println("Could not save item to db")
 		return err
