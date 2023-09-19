@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/cmd/load/loaders"
-	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/posts"
+	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/loaders"
+	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/models/posts"
 )
 
 func TestHashnodeLoadSinglePost(t *testing.T) {
