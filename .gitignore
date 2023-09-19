@@ -1,3 +1,4 @@
 node_modules
 .next
 blogs-aggregator/.envrc
+blogs-aggregator/bin
