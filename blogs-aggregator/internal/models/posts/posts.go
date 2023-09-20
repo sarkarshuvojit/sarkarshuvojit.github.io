@@ -9,6 +9,7 @@ import (
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 type Post struct {
@@ -56,7 +57,12 @@ func (p PostRepositoryMongo) Get(id string) (*Post, error) {
 }
 
 func (p PostRepositoryMongo) GetAll() ([]Post, error) {
-	cursor, err := p.coll.Find(context.TODO(), bson.D{})
+	filter := bson.D{}
+
+	opts := options.Find()
+	opts = opts.SetSort(bson.D{{Key: "publishedAt", Value: -1}})
+
+	cursor, err := p.coll.Find(context.TODO(), filter, opts)
 	if err != nil {
 		return nil, err
 	}
