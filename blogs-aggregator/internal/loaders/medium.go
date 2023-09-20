@@ -24,10 +24,16 @@ func (ml MediumLoader) Parse(src []byte) ([]posts.Post, error) {
 		content := feedItem.Content
 		matchFromContent := re.FindStringSubmatch(content)
 		ogImageUrl := matchFromContent[1]
+		if len(feedItem.Description) == 0 {
+			feedItem.Description = feedItem.Content[:150] + "...."
+		}
 		postList = append(postList, posts.Post{
-			Title:      feedItem.Title,
-			OgUrl:      feedItem.Link,
-			OgImageUrl: ogImageUrl,
+			Title:            feedItem.Title,
+			Slug:             "",
+			ShortDescription: feedItem.Description,
+			OgUrl:            feedItem.Link,
+			OgImageUrl:       ogImageUrl,
+			PublishedAt:      *feedItem.PublishedParsed,
 		})
 	}
 

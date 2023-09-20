@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"os"
 
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/constants"
 	"github.com/sarkarshuvojit/sarkarshuvojit.github.io/blogs-aggregator/internal/db"
@@ -80,7 +79,7 @@ func (l LoaderService) storePosts(postList []posts.Post) error {
 }
 
 func (l LoaderService) initSchema() error {
-	client, err := db.GetClient(context.TODO(), os.Getenv("MONGO_CONN"))
+	client, err := db.GetClient(context.TODO())
 	defer client.Disconnect(context.TODO())
 
 	if err != nil {

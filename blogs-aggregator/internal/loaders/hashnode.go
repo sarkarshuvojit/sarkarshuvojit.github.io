@@ -20,9 +20,12 @@ func (ml HashnodeLoader) Parse(src []byte) ([]posts.Post, error) {
 	for i := range feed.Items {
 		feedItem := feed.Items[i]
 		postList = append(postList, posts.Post{
-			Title:      feedItem.Title,
-			OgUrl:      feedItem.Link,
-			OgImageUrl: feedItem.Custom["cover_image"],
+			Title:            feedItem.Title,
+			Slug:             "",
+			ShortDescription: feedItem.Description,
+			OgUrl:            feedItem.Link,
+			OgImageUrl:       feedItem.Custom["cover_image"],
+			PublishedAt:      *feedItem.PublishedParsed,
 		})
 	}
 
