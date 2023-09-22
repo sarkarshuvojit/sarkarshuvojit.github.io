@@ -1,4 +1,5 @@
 import { useState } from "react";
+import experience from "../constants/experience";
 
 const About = () => {
   const [toggleList, setToggleList] = useState("tab1");
@@ -137,48 +138,31 @@ const About = () => {
                 {/* Boxed List */}
                 <div className="resumo_fn_boxed_list">
                   <ul>
-                    <li>
+                    {experience.fulltime && experience.fulltime.map(e => <li>
                       <div className="item">
                         <div className="item_top">
-                          <h5>Frenify LLC</h5>
-                          <span>( 2018 — Today )</span>
+                          <h5 style={{textTransform: "unset"}}>{e.companyName}</h5>
+                          <span>( {e.timeFrame} )</span>
                         </div>
-                        <h3>Sr. Front-end Engineer</h3>
-                        <p>
-                          Adipisicing Lorem ipsum dolor sit amet, consectetur
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.{" "}
-                        </p>
+                        <h3>{e.role}</h3>
+                        <ul style={{listStyleType: "circle"}}>
+                          {e.description && e.description.map(d => <li>{d}</li>)}
+                        </ul>
                       </div>
-                    </li>
-                    <li>
+                    </li>)}
+                    <li><hr className="hr-text" data-content="Internship/Part-time During College"/></li>
+                    {experience.parttime && experience.parttime.map(e => <li>
                       <div className="item">
                         <div className="item_top">
-                          <h5>Google LLC</h5>
-                          <span>( 2016 — 2018 )</span>
+                          <h5 style={{textTransform: "unset"}}>{e.companyName}</h5>
+                          <span>( {e.timeFrame} )</span>
                         </div>
-                        <h3>Front-end Developer</h3>
-                        <p>
-                          Adipisicing Lorem ipsum dolor sit amet, consectetur
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.{" "}
-                        </p>
+                        <h3>{e.role}</h3>
+                        <ul style={{listStyleType: "circle"}}>
+                          {e.description && e.description.map(d => <li>{d}</li>)}
+                        </ul>
                       </div>
-                    </li>
-                    <li>
-                      <div className="item">
-                        <div className="item_top">
-                          <h5>Twitter LLC</h5>
-                          <span>( 2016 — 2011 )</span>
-                        </div>
-                        <h3>Graphic Designer</h3>
-                        <p>
-                          Adipisicing Lorem ipsum dolor sit amet, consectetur
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.{" "}
-                        </p>
-                      </div>
-                    </li>
+                    </li>)}
                   </ul>
                 </div>
                 {/* /Boxed List */}
