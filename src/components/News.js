@@ -36,7 +36,7 @@ const News = () => {
                     <div className="abs_img" style={{ backgroundImage: `url('${p.OgImageUrl}')` }} />
                   </div>
                   <div className="title_holder">
-                    <p>September 22, 2021</p>
+                    <p>{p.PublishedAt}</p>
                     <h3>
                       <a href="#">
                         {p.Title}
