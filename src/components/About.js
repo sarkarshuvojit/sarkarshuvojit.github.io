@@ -1,6 +1,25 @@
 import { useState } from "react";
 import experience from "../constants/experience";
 
+
+const Experience = ({ e }) => {
+  return <li>
+    <div className="item">
+      <div className="item_top">
+        <h5 style={{textTransform: "unset"}}>{e.companyName}</h5>
+        <span>( {e.timeFrame} )</span>
+      </div>
+      <h3>{e.role}</h3>
+      <ul style={{listStyleType: "circle"}}>
+        {e.description && e.description.map(d => <li>{d}</li>)}
+      </ul>
+      <div className="item_bottom">
+      {e.technologies.map( t => <span className="techItem">{t}</span>)}
+      </div>
+    </div>
+  </li>
+}
+
 const About = () => {
   const [toggleList, setToggleList] = useState("tab1");
   const activeList = (value) => (value === toggleList ? "active" : "");
@@ -138,31 +157,9 @@ const About = () => {
                 {/* Boxed List */}
                 <div className="resumo_fn_boxed_list">
                   <ul>
-                    {experience.fulltime && experience.fulltime.map(e => <li>
-                      <div className="item">
-                        <div className="item_top">
-                          <h5 style={{textTransform: "unset"}}>{e.companyName}</h5>
-                          <span>( {e.timeFrame} )</span>
-                        </div>
-                        <h3>{e.role}</h3>
-                        <ul style={{listStyleType: "circle"}}>
-                          {e.description && e.description.map(d => <li>{d}</li>)}
-                        </ul>
-                      </div>
-                    </li>)}
+                    {experience.fulltime && experience.fulltime.map(e => <Experience e={e} />)}
                     <li><hr className="hr-text" data-content="Internship/Part-time During College"/></li>
-                    {experience.parttime && experience.parttime.map(e => <li>
-                      <div className="item">
-                        <div className="item_top">
-                          <h5 style={{textTransform: "unset"}}>{e.companyName}</h5>
-                          <span>( {e.timeFrame} )</span>
-                        </div>
-                        <h3>{e.role}</h3>
-                        <ul style={{listStyleType: "circle"}}>
-                          {e.description && e.description.map(d => <li>{d}</li>)}
-                        </ul>
-                      </div>
-                    </li>)}
+                    {experience.parttime && experience.parttime.map(e => <Experience e={e} />)}
                   </ul>
                 </div>
                 {/* /Boxed List */}

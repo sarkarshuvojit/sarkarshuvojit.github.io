@@ -86,3 +86,17 @@ html {
     background-color: #1d1b19;
   }
 }
+
+.item_bottom {
+  display: flex;
+  column-gap: 15px;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  clear: both;
+}
+
+.techItem {
+  font-weight: 500;
+  color: var(--mc);
+  font-size: 15px;
+}
