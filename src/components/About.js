@@ -197,37 +197,9 @@ const About = () => {
               <div id="tab3" className={`tab_item ${activeList("tab3")}`}>
                 {/* Progress Bar */}
                 <div className="resumo_fn_progress_bar">
-                  <div className="progress_item open" data-value={70}>
-                    <div className="item_in">
-                      <h3 className="progress_title">Backend Engineering</h3>
-                      <span
-                        className="progress_percent"
-                        style={{ right: "20%" }}
-                      >
-                        70%
-                      </span>
-                      <div className="bg_wrap">
-                        <div className="progress_bg" style={{ width: "92%" }} />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="progress_item open" data-value={95}>
-                    <div className="item_in">
-                      <h3 className="progress_title">HTML5 &amp; CSS3</h3>
-                      <span
-                        className="progress_percent"
-                        style={{ right: "5%" }}
-                      >
-                        95%
-                      </span>
-                      <div className="bg_wrap">
-                        <div className="progress_bg" style={{ width: "95%" }} />
-                      </div>
-                    </div>
-                  </div>
                   <div className="progress_item open" data-value={80}>
                     <div className="item_in">
-                      <h3 className="progress_title">WordPress</h3>
+                      <h3 className="progress_title">Backend Engineering</h3>
                       <span
                         className="progress_percent"
                         style={{ right: "20%" }}
@@ -239,33 +211,36 @@ const About = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="progress_item open" data-value={85}>
+                  <div className="progress_item open" data-value={60}>
                     <div className="item_in">
-                      <h3 className="progress_title">Adobe Illustrator</h3>
+                      <h3 className="progress_title">DevOps</h3>
                       <span
                         className="progress_percent"
-                        style={{ right: "15%" }}
+                        style={{ right: "40%" }}
                       >
-                        85%
+                        60%
                       </span>
                       <div className="bg_wrap">
-                        <div className="progress_bg" style={{ width: "85%" }} />
+                        <div className="progress_bg" style={{ width: "60%" }} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="progress_item open" data-value={50}>
+                    <div className="item_in">
+                      <h3 className="progress_title">Frontend</h3>
+                      <span
+                        className="progress_percent"
+                        style={{ right: "50%" }}
+                      >
+                        50%
+                      </span>
+                      <div className="bg_wrap">
+                        <div className="progress_bg" style={{ width: "50%" }} />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* /Progress Bar */}
-                {/* Description */}
-                <div className="resumo_fn_desc">
-                  <p>
-                    A freelance creative designer with a love for minimal
-                    design, clean typography and well-written code, located in
-                    San Francisco. Provide high quality and cost effective
-                    offshore web and software development services. Wide range
-                    of web and software development services across the world.
-                  </p>
-                </div>
               </div>
               {/* /#2 tab content */}
             </div>
