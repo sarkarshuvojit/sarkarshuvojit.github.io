@@ -60,7 +60,38 @@ const madkraft = experience(
     ["Php", "Javascript", "Java", "jQuery", "Laravel", "Android", "MySQL", "AWS", "AWS S3"]
   );
 
+const digitalBongs = experience(
+    "Digital Bongs", 
+    "Feb 2017 - July 2017", 
+    "Fullstack Developer", 
+    [ "Backend: Responsible for building/maintaining custom CMS for blogs and responsible for building/maintaining cron jobs to maintain server health & aggregating data",
+"Custom Analytics Platform: Built an application level traffic analysis tool for a blog using Google Analytics, which could provide insights like which author or which article type which category did well and presented it all in a simple dashboard.",
+"Mobile App: Created an android app to consume and interact with REST APIs to for a lottery SaaS app.",
+    ],
+    ["Php", "Javascript", "jQuery", "Codeigniter", "Android", "MySQL", "AWS", "Google Analytics API"]
+  );
+
+const sterlingAG = experience(
+    "Sterling AG", 
+    "June 2015 - Feb 2017", 
+    "Fullstack Developer", 
+    [ "Tech Ad-Campaigns: Worked on developing and deploying media rich ad-campaigns, which had mostly to do with dynamic image/video rendering, for clients like ICICI, HDFC. Used Laravel, MySQL for the most part and AWS for deploying. Implemented a custom queue using database & cron job to handle server load during the campaign and making sure the server stays up.",
+"HTML Mailers: Worked on lot of HTML mailers and wrote some scripts to automate the mailer development process.",
+    ],
+    ["Php", "Javascript", "jQuery", "Laravel", "MySQL", "AWS", ]
+  );
+
+const sidusInfinity = experience(
+    "Sidus Infinity Pvt. Ltd.", 
+    "April 2015 - May 2015", 
+    "Web Development Intern", 
+    [ "Backend: Worked on fixing bugs in previously on-going CodeIgniter projects.",
+"Web Scraping: Used mechanize and BeautifulSoup on Python to write scripts that scrap data off the internet to generate leads.",
+    ],
+    ["Php", "CodeIgniter", "Python", "BeautifulSoup" ]
+  );
+
 export default {
   fulltime: [ healthi, appworx, techpro ],
-  parttime: [ madkraft ],
+  parttime: [ madkraft, digitalBongs, sterlingAG, sidusInfinity],
 };
