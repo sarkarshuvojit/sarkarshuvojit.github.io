@@ -31,11 +31,7 @@ const Contact = () => {
           <div className="resumo_fn_main_title">
             <h3 className="subtitle">Contact</h3>
             <h3 className="title">Get In Touch</h3>
-            <p className="desc">
-              If you have any suggestion, project or even you want to say
-              “hello”, please fill out the form below and I will reply you
-              shortly.
-            </p>
+            <p className="desc"> If you have any suggestions or projects, or even if you want to say “hello”, please fill out the form below, and I will reply to you shortly. </p>
           </div>
           {/* /Main Title */}
           {/* Contact Form */}

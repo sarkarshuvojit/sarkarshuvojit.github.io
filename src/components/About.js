@@ -31,66 +31,19 @@ const About = () => {
           <div className="resumo_fn_main_title">
             <h3 className="subtitle">About Me</h3>
             <h3 className="title">Biography</h3>
-            <p className="desc">
-              I'm a Full Stack Developer with over 5 years of full time experience, I was also part of multiple internships during my college.  <br/>
-    My daily works involves building scalable & distributed backend services.
-            </p>
+            <p className="desc"> I am Shuvojit Sarkar, a proficient full-stack software developer, with a comprehensive understanding of the entire technology stack. My expertise focuses on the precise design and development of backend architectures. Additionally, I bring a unique capability to the table: the ability to improve developer efficiency through the deployment of customized tools and scripts. </p>
+            <p className="desc">My journey has been etched with over half a decade of post-graduate professional experience, along with 3 formative years honing my craft during college. As someone who deeply resonates with the dynamic world of technology, I've committed myself to not only mastering the present but also anticipating the future.</p>
+            <p className="desc">The dual path of academic rigor and practical experience has equipped me to approach problems from multiple dimensions. My time in college was not an interruption but an integral phase where I began to apply theoretical knowledge in practical, real-world scenarios. This unique blend of theory and practice continues to serve me well in my role as a programmer specializing in multiple programming languages.</p>
           </div>
           {/* /Main Title */}
           {/* About Information */}
           <div className="resumo_fn_about_info">
             <div className="about_left">
-              <table>
-                <tbody>
-                  <tr>
-                    <th>Name</th>
-                    <th>Shuvojit Sarkar</th>
-                  </tr>
-                  <tr>
-                    <th>Birthday</th>
-                    <th>15th February 1997</th>
-                  </tr>
-                  <tr>
-                    <th>Age</th>
-                    <th>26 years</th>
-                  </tr>
-                  <tr>
-                    <th>Address</th>
-                    <th>Kolkata, WB, India</th>
-                  </tr>
-                  <tr>
-                    <th>Phone</th>
-                    <th>
-                      <a href="tel:+919836304364">(+91) 9836304364</a>
-                    </th>
-                  </tr>
-                  <tr>
-                    <th>Email</th>
-                    <th>
-                      <a href="mailto:s15sarkar@yahoo.com">
-                        s15sarkar@yahoo.com
-                      </a>
-                    </th>
-                  </tr>
-                  <tr>
-                    <th>Github</th>
-                    <th>
-                      <a href="https://github.com/sarkarshuvojit">@sarkarshuvojit</a>
-                    </th>
-                  </tr>
-                  <tr>
-                    <th>Linkedin</th>
-                    <th>
-                      <a href="https://linkedin.com/in/sarkarshuvojit">@sarkarshuvojit</a>
-                    </th>
-                  </tr>
-                </tbody>
-              </table>
             </div>
             <div className="about_right">
               {/* Download CV Button */}
               <div className="resumo_fn_cv_btn">
-                <a href="img/cv.jpg" download>
+                <a href="https://drive.google.com/file/d/1cAW14cO2AhT6jhjcuDGL67gj8cvzVZ7F/view?usp=drive_link" target="_blank">
                   <span className="icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
