@@ -1,6 +1,12 @@
 import { useState } from "react";
 import Socials from "../components/Socials";
+const getMailtoUrl = ({email, name, phone, msg}) => {
+  const body = encodeURIComponent(`Contact Details: ${email} ${name} ${phone} 
+===========================
 
+${msg}`)
+  return `mailto:shuvojit.s.official@gmail.com?subject=Connect%20W%2F%20Shuvojit&body=${body}`
+}
 const Contact = () => {
   const [form, setForm] = useState({ email: "", name: "", phone: "", msg: "" });
   const [active, setActive] = useState(null);
@@ -14,6 +20,8 @@ const Contact = () => {
     e.preventDefault();
     if (email && name && phone && msg) {
       setSuccess(true);
+      const mailtoUrl = getMailtoUrl({email, name, phone, msg})
+      window.open(mailtoUrl, "_blank");
       setTimeout(() => {
         setForm({ email: "", name: "", phone: "", msg: "" });
         setSuccess(false);
