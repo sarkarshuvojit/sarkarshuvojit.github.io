@@ -11,10 +11,7 @@ async function getAllPosts() {
   const text = await response.text();
   const _posts = JSON.parse(text)["posts"];
   _posts.forEach(_p => {
-    console.log(_p)
-    console.log(_p.PublishedAt);
     _p.PublishedAt = getNicerFormat(_p.PublishedAt)
-    console.log(_p)
   })
   return _posts;
 }

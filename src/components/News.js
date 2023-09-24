@@ -2,6 +2,7 @@ import {memo} from "react";
 import {usePosts} from "../services/posts";
 
 const News = () => {
+  console.log("News Rendering");
   const { posts, isLoading, error } = usePosts();
 
   if (error) {

@@ -11,10 +11,10 @@ const Experience = ({ e }) => {
       </div>
       <h3>{e.role}</h3>
       <ul style={{listStyleType: "circle"}}>
-        {e.description && e.description.map(d => <li>{d}</li>)}
+        {e.description && e.description.map((d, i) => <li key={i}>{d}</li>)}
       </ul>
       <div className="item_bottom">
-      {e.technologies.map( t => <span className="techItem">{t}</span>)}
+      {e.technologies.map( (t, i) => <span key={i} className="techItem">{t}</span>)}
       </div>
     </div>
   </li>
@@ -110,9 +110,9 @@ const About = () => {
                 {/* Boxed List */}
                 <div className="resumo_fn_boxed_list">
                   <ul>
-                    {experience.fulltime && experience.fulltime.map(e => <Experience e={e} />)}
-                    <li><hr className="hr-text" data-content="Internship/Part-time During College"/></li>
-                    {experience.parttime && experience.parttime.map(e => <Experience e={e} />)}
+                    {experience.fulltime && experience.fulltime.map((e, i) => <Experience key={i} e={e} />)}
+                    <li key="line-break"><hr className="hr-text" data-content="Internship/Part-time During College"/></li>
+                    {experience.parttime && experience.parttime.map((e, i) => <Experience key={i} e={e} />)}
                   </ul>
                 </div>
                 {/* /Boxed List */}
