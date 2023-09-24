@@ -1,21 +1,13 @@
 import About from "../src/components/About";
 import Contact from "../src/components/Contact";
-import Customers from "../src/components/Customers";
 import Home from "../src/components/Home";
 import News from "../src/components/News";
-import Portfolio from "../src/components/Portfolio";
-import Services from "../src/components/Services";
 import Layout from "../src/layouts/Layout";
-import {
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query'
 
-const queryClient = new QueryClient()
 
-const Index = (props) => {
+const Index = () => {
+  console.log("Render index");
   return (
-    <QueryClientProvider client={queryClient}>
       <Layout>
         <Home />
         {/* /Home Section */}
@@ -38,7 +30,6 @@ const Index = (props) => {
         <Contact />
         {/* /Contact Section */}
       </Layout>
-    </QueryClientProvider>
   );
 };
 

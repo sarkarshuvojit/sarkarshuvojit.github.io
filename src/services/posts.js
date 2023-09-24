@@ -6,7 +6,8 @@ function getNicerFormat(ds) {
   return `${m} ${d.getDate()}, ${d.getFullYear()}`;
 }
 
-async function getAllPosts() {
+export async function getAllPosts() {
+  console.log("Getting all posts")
   const response = await fetch("https://7aha5s5ytznht4zwgd7zmhjwpa0zxydq.lambda-url.us-east-1.on.aws/");
   const text = await response.text();
   const _posts = JSON.parse(text)["posts"];

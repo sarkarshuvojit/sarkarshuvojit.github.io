@@ -1,14 +1,20 @@
-import {memo} from "react";
-import {usePosts} from "../services/posts";
+import React, {useEffect, useState} from "react";
+import {getAllPosts} from "../services/posts";
 
 const News = () => {
-  console.log("News Rendering");
-  const { posts, isLoading, error } = usePosts();
+  console.log("Render News")
+  const [posts, setPosts] = useState([])
+  const [error, setError] = useState(null)
 
   if (error) {
     console.error("Error:", error);
   }
 
+  useEffect(() => {
+    getAllPosts()
+      .then(_posts => setPosts(_posts))
+      .catch(err => setError(err))
+  }, []);
 
   return (
     <section id="news">
@@ -22,7 +28,7 @@ const News = () => {
           {/* /Main Title */}
           {/* Blog List */}
           <div className="resumo_fn_blog_list">
-            {isLoading && <p>Loading...</p>}
+            {!posts && <p>Loading...</p>}
             <ul className="modal_items" data-from="blog" data-count={posts?.length || 6}>
               {posts && posts.map((p, idx) => <li key={idx}>
                 <div
@@ -97,4 +103,4 @@ function ArticleSkeleton(idx) {
 
 }
 
-export default memo(News)
+export default News
