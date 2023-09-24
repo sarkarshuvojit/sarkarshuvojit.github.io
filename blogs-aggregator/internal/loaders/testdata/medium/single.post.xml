@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"
+	xmlns:cc="http://cyber.law.harvard.edu/rss/creativeCommonsRssModule.html">
+	<channel>
+		<title>
+			<![CDATA[Stories by Shuvojit Sarkar on Medium]]>
+		</title>
+		<description>
+			<![CDATA[Stories by Shuvojit Sarkar on Medium]]>
+		</description>
+		<link>https://medium.com/@shuvojitsarkar?source=rss-28b91177e737------2</link>
+		<image>
+			<url>https://cdn-images-1.medium.com/fit/c/150/150/1*zSJxOR_fyfpIqeLWVTWdwg.jpeg</url>
+			<title>Stories by Shuvojit Sarkar on Medium</title>
+			<link>https://medium.com/@shuvojitsarkar?source=rss-28b91177e737------2</link>
+		</image>
+		<generator>Medium</generator>
+		<lastBuildDate>Wed, 13 Sep 2023 02:16:18 GMT</lastBuildDate>
+		<atom:link href="https://medium.com/@shuvojitsarkar/feed" rel="self" type="application/rss+xml"/>
+		<webMaster>
+			<![CDATA[yourfriends@medium.com]]>
+		</webMaster>
+		<atom:link href="http://medium.superfeedr.com" rel="hub"/>
+		<item>
+			<title>
+				<![CDATA[5 ways to write cleaner Angular Code: Part I]]>
+			</title>
+			<link>https://codeburst.io/5-ways-to-write-cleaner-angular-code-part-i-8a5339a3e957?source=rss-28b91177e737------2</link>
+			<guid isPermaLink="false">https://medium.com/p/8a5339a3e957</guid>
+			<category>
+				<![CDATA[readable-code]]>
+			</category>
+			<category>
+				<![CDATA[clean-code]]>
+			</category>
+			<category>
+				<![CDATA[angular]]>
+			</category>
+			<category>
+				<![CDATA[programming]]>
+			</category>
+			<category>
+				<![CDATA[enterprise-software]]>
+			</category>
+			<dc:creator>
+				<![CDATA[Shuvojit Sarkar]]>
+			</dc:creator>
+			<pubDate>Wed, 11 Mar 2020 03:22:32 GMT</pubDate>
+			<atom:updated>2020-03-11T03:22:32.506Z</atom:updated>
+			<content:encoded>
+				<![CDATA[<h3>Using Enums</h3><p>Let’s say you have a use case, where there are three modes in a component, there are three buttons that set the mode, and according to the active mode some divs get either hidden or shown.</p><p>Now the solution is pretty simple, we will have a state variable containing some data, and you do <strong>*ngIf </strong>on the div(s) and have a <strong>setState()</strong> function which sets a new state, which is triggered via buttons.</p><figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*R1X2RDWnYr70_aCO05mHcg.jpeg" /></figure><p>Now this is how I see ~80% people doing it, this code obviously works, but the issue with this code is, if someone else from the team has to work on it, or god forbid you yourself have to edit this part few months later,</p><ol><li>You’re gonna have a hard time remembering what all of those mean, or how many types of states are there;</li><li>You will not get any autocomplete support from IDE(s) like vscode;</li><li>You will not get a warning from the IDE if you mistakenly put another value which is not in the set, which is a very easy way to introduce bugs into your component.</li></ol><figure><img alt="" src="https://cdn-images-1.medium.com/max/688/1*nMeXXkvW5UfROEQuCEMAWg.png" /></figure><p>Now let’s look at this thing we call an enum.</p><p>In simple words, enums allow us to declare a set of named constants i.e. a collection of related values that can be numeric or string values.</p><p>Let’s look at how introducing enum to our codebase might help us -</p><ol><li><strong>Type safety:</strong> Enums provide compile-time type safety and prevent from comparing constants in different enums.</li><li><strong>Limits inputs:</strong> The linter won’t allow parsing a constant of a wrong enum to a method that expects an enum type. When using enum in switch statement, the enum constants are the only allowed labels for cases. IDEs like vscode even provide autocomplete feature for filling them.</li><li>Enums <strong>groups things</strong> in a set.</li><li>Enums are <strong>iterable</strong>.</li><li><strong>Maintainablity</strong>: Let’s say the value for a type needs to be changed, if you’re using raw data throughout the application you’ll have to change it everywhere, but with enums, as you’re resuing it, changing it at one place will work seamlessly.</li></ol><p>Now let’s look at our previous component with the enum class implemented.</p><figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*IxtIXgYqG-sxOyQ_W_VgNg.jpeg" /></figure><figure><img alt="" src="https://cdn-images-1.medium.com/max/665/1*v1IA70N7ZAO4-j6NY1BxEQ.png" /></figure><p>There you have it, a much cleaner code, and the linter will understand your code and assist you better.</p><p>You can click <a href="https://stackblitz.com/edit/angular-qheqnd?file=src/app/app.component.ts">here</a> to get the example code on StackBlitz.</p><h3>Closing Thoughts</h3><p>I’m planning to post 4 more articles in this series, and some Angular Design patterns I use as well.</p><p>If you liked this post, please do hit the 👏 below to support.</p><img src="https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=8a5339a3e957" width="1" height="1" alt=""><hr><p><a href="https://codeburst.io/5-ways-to-write-cleaner-angular-code-part-i-8a5339a3e957">5 ways to write cleaner Angular Code: Part I</a> was originally published in <a href="https://codeburst.io">codeburst</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>]]>
+			</content:encoded>
+		</item>
+	</channel>
+</rss>
