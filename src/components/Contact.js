@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Socials from "../components/Socials";
+
 const Contact = () => {
   const [form, setForm] = useState({ email: "", name: "", phone: "", msg: "" });
   const [active, setActive] = useState(null);
@@ -23,6 +25,7 @@ const Contact = () => {
       }, 2000);
     }
   };
+
   return (
     <section id="contact">
       <div className="container">
@@ -30,7 +33,10 @@ const Contact = () => {
           {/* Main Title */}
           <div className="resumo_fn_main_title">
             <h3 className="subtitle">Contact</h3>
-            <h3 className="title">Get In Touch</h3>
+            <div className="get_in_touch_header">
+              <h3 className="title">Get In Touch</h3>
+              <Socials />
+            </div>
             <p className="desc"> If you have any suggestions or projects, or even if you want to say “hello”, please fill out the form below, and I will reply to you shortly. </p>
           </div>
           {/* /Main Title */}

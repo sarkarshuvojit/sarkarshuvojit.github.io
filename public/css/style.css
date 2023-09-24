@@ -498,13 +498,13 @@ a:focus {
 	opacity: 0;
 	transform: translateY(50px);
 }
-.resumo_fn_navigation .social{
+.social{
 	margin-bottom: 25px;
 }
-.resumo_fn_navigation .social li{
+.social li{
 	margin: 0 10px 10px 0;
 }
-.resumo_fn_navigation .social ul{
+.social ul{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -522,7 +522,7 @@ a:focus {
 	align-items: center;
 	flex-wrap: wrap;
 }
-.resumo_fn_navigation .social a{
+.social a{
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -537,12 +537,12 @@ a:focus {
 	background-color: rgba(255,255,255,.05);
 	transition: all 300ms ease;
 }
-.resumo_fn_navigation .social .fn__svg{
+.social .fn__svg{
 	width: 18px;
 	height: 18px;
 	display: block;
 }
-.resumo_fn_navigation .social a:hover{
+.social a:hover{
 	background-color: rgba(255,255,255,.1);
 }
 .resumo_fn_navigation .copyright{

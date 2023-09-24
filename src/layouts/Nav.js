@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
-import {Email, Github, Linkedin, Stackoverflow, Twitter} from "../components/Icons";
-import texts from "../constants/texts";
+import Socials from "../components/Socials";
+
 
 const Nav = ({ close, trigger }) => {
   const [toggle_, setToggle_] = useState("");
@@ -28,27 +28,12 @@ const Nav = ({ close, trigger }) => {
               </li>
               <li style={{ transitionDelay: !trigger ? "0ms" : "900ms" }}>
                 <a onClick={() => close()} href="#about">
-                  About
-                </a>
-              </li>
-              <li style={{ transitionDelay: !trigger ? "0ms" : "1100ms" }}>
-                <a onClick={() => close()} href="#portfolio">
-                  Portfolio
-                </a>
-              </li>
-              <li style={{ transitionDelay: !trigger ? "0ms" : "1300ms" }}>
-                <a onClick={() => close()} href="#services">
-                  Services
-                </a>
-              </li>
-              <li style={{ transitionDelay: !trigger ? "0ms" : "1500ms" }}>
-                <a onClick={() => close()} href="#customers">
-                  Customers
+                  About & Career
                 </a>
               </li>
               <li style={{ transitionDelay: !trigger ? "0ms" : "1700ms" }}>
                 <a onClick={() => close()} href="#news">
-                  News &amp; Tips
+                  Blogs
                 </a>
               </li>
               <li style={{ transitionDelay: !trigger ? "0ms" : "1900ms" }}>
@@ -59,39 +44,7 @@ const Nav = ({ close, trigger }) => {
             </ul>
           </nav>
           <div className={`nav_footer ${toggle_}`}>
-            <div className="social">
-              <ul>
-                <li>
-                  <a href={texts.urls.github} target="_blank">
-                    <Github />
-                  </a>
-                </li>
-
-                <li>
-                  <a href={texts.urls.stackoverflow} target="_blank">
-                    <Stackoverflow />
-                  </a>
-                </li>
-
-                <li>
-                  <a href={texts.urls.twitter} target="_blank">
-                    <Twitter />
-                  </a>
-                </li>
-
-                <li>
-                  <a href={texts.urls.linkedin} target="_blank">
-                    <Linkedin />
-                  </a>
-                </li>
-
-                <li>
-                  <a href={texts.urls.email} target="_blank">
-                    <Email />
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <Socials />
           </div>
         </div>
 

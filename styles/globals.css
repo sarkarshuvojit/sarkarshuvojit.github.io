@@ -100,3 +100,9 @@ html {
   color: var(--mc);
   font-size: 15px;
 }
+
+.get_in_touch_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
