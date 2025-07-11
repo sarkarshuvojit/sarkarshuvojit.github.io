@@ -61,7 +61,7 @@ const About = () => {
                 </li>
               </ul>
               <div className="resume_download_btn">
-                <a href={texts.urls.resume} target="_blank" download style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', padding: '5px 16px', border: '1px solid #ccc', borderRadius: '4px', fontSize: 'x-large'}}>
+                <a href={texts.urls.resume} target="_blank" download className="resume-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', padding: '5px 16px', border: '1px solid #ccc', borderRadius: '4px', fontSize: '15px'}}>
                   <Download />
                   <span>Resume</span>
                 </a>
