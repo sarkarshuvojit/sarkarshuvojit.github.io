@@ -27,15 +27,6 @@ const About = () => {
     <section id="about">
       <div className="container">
         <div className="roww">
-          {/* Main Title */}
-          <div className="resumo_fn_main_title">
-            <h3 className="subtitle">About Me</h3>
-            <h3 className="title">Biography</h3>
-            <p className="desc"> I am Shuvojit Sarkar, a proficient full-stack software developer, with a comprehensive understanding of the entire technology stack. My expertise focuses on the precise design and development of backend architectures. Additionally, I bring a unique capability to the table: the ability to improve developer efficiency through the deployment of customized tools and scripts. </p>
-            <p className="desc">My journey has been etched with over half a decade of post-graduate professional experience, along with 3 formative years honing my craft during college. As someone who deeply resonates with the dynamic world of technology, I've committed myself to not only mastering the present but also anticipating the future.</p>
-            <p className="desc">The dual path of academic rigor and practical experience has equipped me to approach problems from multiple dimensions. My time in college was not an interruption but an integral phase where I began to apply theoretical knowledge in practical, real-world scenarios. This unique blend of theory and practice continues to serve me well in my role as a programmer specializing in multiple programming languages.</p>
-          </div>
-          {/* /Main Title */}
           {/* About Information */}
           <div className="resumo_fn_about_info">
             <div className="about_left">
