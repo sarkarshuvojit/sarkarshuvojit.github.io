@@ -58,8 +58,6 @@ body{
 }
 .fn__svg{
 	fill: currentcolor;
-	width: 18px;
-	height: 18px;
 }
 h1,h2,h3,h4,h5,h6{line-height: 1.2;font-weight: 600;font-family: 'Jost';color: #ddd;}
 h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color: #ddd;}
@@ -499,7 +497,6 @@ a:focus {
 	transform: translateY(50px);
 }
 .social{
-	margin-bottom: 25px;
 }
 .social li{
 	margin: 0 10px 10px 0;
@@ -546,12 +543,6 @@ a:focus {
 	background-color: rgba(255,255,255,.1);
 }
 .resume-btn{
-	transition: all 300ms ease;
-}
-.resume-btn:hover{
-	transform: translateY(-2px);
-	box-shadow: 0 6px 20px rgba(255,255,255,.15);
-	border-color: rgba(255,255,255,.4) !important;
 }
 .resumo_fn_navigation .copyright{
 	width: 100%;
@@ -2328,11 +2319,6 @@ body.light #nav ul a{color: #333;}
 body.light #nav ul a:hover{color: var(--mc);}
 body.light .resumo_fn_navigation .social a{background-color: rgba(0,0,0,.05);color: #333;}
 body.light .resumo_fn_navigation .social a:hover{background-color: rgba(0,0,0,.1);}
-body.light .resume-btn:hover{
-	transform: translateY(-2px);
-	box-shadow: 0 6px 20px rgba(0,0,0,.15);
-	border-color: rgba(0,0,0,.4) !important;
-}
 body.light .resumo_fn_navigation .copyright a{color: #333;}
 body.light .resumo_fn_navigation .copyright a:before{background-color: rgba(0,0,0,.2);}
 body.light .resumo_fn_navigation .copyright a:hover:before{background-color: rgba(0,0,0,.5);}

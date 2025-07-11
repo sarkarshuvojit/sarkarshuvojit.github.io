@@ -1,0 +1,30 @@
+{
+  "oss": [
+    {
+      "rank": 1,
+      "title": "Example Open Source Project",
+      "description": [
+        "This is a sample open source project description",
+        "It demonstrates the structure for project data",
+        "Multiple description lines can be added here"
+      ],
+      "stack": ["React", "Node.js", "TypeScript", "PostgreSQL"],
+      "demoLink": "https://example.com/demo",
+      "githubLink": "https://github.com/username/project"
+    }
+  ],
+  "vibecoded": [
+    {
+      "rank": 1,
+      "title": "Example Vibe Code Project",
+      "description": [
+        "This is a sample creative coding project",
+        "It showcases experimental and artistic code",
+        "Perfect for demonstrating innovative approaches"
+      ],
+      "stack": ["P5.js", "Three.js", "WebGL", "Canvas API"],
+      "demoLink": "https://example.com/vibe-demo",
+      "githubLink": "https://github.com/username/vibe-project"
+    }
+  ]
+}

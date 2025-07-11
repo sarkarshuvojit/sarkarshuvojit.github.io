@@ -1,4 +1,4 @@
-import {Email, Github, Linkedin, Stackoverflow, Twitter, Download} from "../components/Icons";
+import {Email, Github, Linkedin, Stackoverflow, Twitter} from "../components/Icons";
 import texts from "../constants/texts";
 
 const Socials = () => {
@@ -25,18 +25,6 @@ const Socials = () => {
       <li>
         <a href={texts.urls.linkedin} target="_blank" title="LinkedIn">
           <Linkedin />
-        </a>
-      </li>
-
-      <li>
-        <a href={texts.urls.email} target="_blank" title="Email">
-          <Email />
-        </a>
-      </li>
-
-      <li>
-        <a href={texts.urls.resume} target="_blank" download title="Download Resume">
-          <Download />
         </a>
       </li>
     </ul>

@@ -1,7 +1,5 @@
 import { useState } from "react";
 import experience from "../constants/experience";
-import { Download } from "./Icons";
-import texts from "../constants/texts";
 
 
 const Experience = ({ e }) => {
@@ -60,12 +58,6 @@ const About = () => {
                   </a>
                 </li>
               </ul>
-              <div className="resume_download_btn">
-                <a href={texts.urls.resume} target="_blank" download className="resume-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', padding: '5px 16px', border: '1px solid #ccc', borderRadius: '4px', fontSize: '15px'}}>
-                  <Download />
-                  <span>Resume</span>
-                </a>
-              </div>
             </div>
             {/* /Tab: Header */}
             {/* Tab: Content */}
