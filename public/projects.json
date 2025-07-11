@@ -2,15 +2,75 @@
   "oss": [
     {
       "rank": 1,
-      "title": "Example Open Source Project",
+      "title": "kafka-sync-proxy",
       "description": [
-        "This is a sample open source project description",
-        "It demonstrates the structure for project data",
-        "Multiple description lines can be added here"
+        "HTTP-to-Kafka bridge that enables synchronous communication patterns",
+        "Makes HTTP calls to Kafka and waits for responses",
+        "Useful for integrating synchronous services with Kafka-based architectures"
       ],
-      "stack": ["React", "Node.js", "TypeScript", "PostgreSQL"],
-      "demoLink": "https://example.com/demo",
-      "githubLink": "https://github.com/username/project"
+      "stack": ["Go", "Kafka", "HTTP", "Docker"],
+      "demoLink": null,
+      "githubLink": "https://github.com/sarkarshuvojit/kafka-sync-proxy"
+    },
+    {
+      "rank": 2,
+      "title": "webhook-load-tester",
+      "description": [
+        "Declarative load testing tool for asynchronous webhook-based APIs",
+        "Configurable test scenarios with YAML/JSON definitions",
+        "Performance monitoring and metrics collection for webhook endpoints"
+      ],
+      "stack": ["Go", "HTTP", "YAML", "Performance Testing"],
+      "demoLink": null,
+      "githubLink": "https://github.com/sarkarshuvojit/webhook-load-tester"
+    },
+    {
+      "rank": 3,
+      "title": "lomboktojson",
+      "description": [
+        "Converts Lombok-generated toString() output to JSON format",
+        "Lightweight utility for debugging and data transformation",
+        "Handles complex nested objects and collections from Java Lombok classes"
+      ],
+      "stack": ["Go", "JSON", "Java Lombok", "CLI"],
+      "demoLink": "https://shuvojit.dev/lomboktojson/",
+      "githubLink": "https://github.com/sarkarshuvojit/lomboktojson"
+    },
+    {
+      "rank": 4,
+      "title": "dirseq",
+      "description": [
+        "Lightweight CLI tool for generating sequential numbers unique to each directory",
+        "Fast and efficient directory-specific sequence management",
+        "Useful for file naming, batch processing, and automation scripts"
+      ],
+      "stack": ["Go", "CLI", "File System"],
+      "demoLink": null,
+      "githubLink": "https://github.com/sarkarshuvojit/dirseq"
+    },
+    {
+      "rank": 5,
+      "title": "k8s-secrets-encoder-decoder",
+      "description": [
+        "Encode and decode Kubernetes secrets files with ease",
+        "Simplifies management of base64-encoded secret values",
+        "Developer-friendly tool for Kubernetes configuration management"
+      ],
+      "stack": ["TypeScript", "Kubernetes", "Base64", "CLI"],
+      "demoLink": null,
+      "githubLink": "https://github.com/sarkarshuvojit/k8s-secrets-encoder-decoder"
+    },
+    {
+      "rank": 6,
+      "title": "firebase-claims-explorer",
+      "description": [
+        "Terminal UI tool for exploring Firebase user custom claims",
+        "Built with BubbleTea for an interactive command-line experience",
+        "Streamlines Firebase authentication debugging and management"
+      ],
+      "stack": ["Go", "BubbleTea", "Firebase", "TUI"],
+      "demoLink": null,
+      "githubLink": "https://github.com/sarkarshuvojit/firebase-claims-explorer"
     }
   ],
   "vibecoded": [
