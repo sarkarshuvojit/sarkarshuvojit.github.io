@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import Socials from "./Socials";
 
 const PanelContent = () => {
   useEffect(() => {
@@ -37,13 +37,8 @@ const PanelContent = () => {
           </p>
         </div>
       </div>
-      <div className="right_bottom">
-        <a href="#contact">
-          <span className="circle" />
-          <span className="text">
-            I’m available for consultation or a fun project.
-          </span>
-        </a>
+      <div id="socials__sidebar" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
+          <Socials />
       </div>
     </div>
   );

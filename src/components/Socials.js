@@ -3,7 +3,7 @@ import texts from "../constants/texts";
 
 const Socials = () => {
   return <div className="social">
-    <ul>
+    <ul className="flex justify-center items-center">
       <li>
         <a href={texts.urls.github} target="_blank">
           <Github />
