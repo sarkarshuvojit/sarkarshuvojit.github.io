@@ -16,15 +16,27 @@
   "vibecoded": [
     {
       "rank": 1,
-      "title": "Example Vibe Code Project",
+      "title": "ZMK Hold-Tap Calibrator",
       "description": [
-        "This is a sample creative coding project",
-        "It showcases experimental and artistic code",
-        "Perfect for demonstrating innovative approaches"
+        "Tool to calibrate ZMK hold-tap behavior by measuring natural typing patterns",
+        "Analyzes tap and hold timings to suggest optimal configuration values",
+        "Helps keyboard enthusiasts fine-tune their custom keyboard firmware"
       ],
-      "stack": ["P5.js", "Three.js", "WebGL", "Canvas API"],
-      "demoLink": "https://example.com/vibe-demo",
-      "githubLink": "https://github.com/username/vibe-project"
+      "stack": ["HTML", "CSS", "JavaScript", "ZMK Firmware"],
+      "demoLink": "https://claude.ai/public/artifacts/ecae0a98-d66f-4f16-bf84-d08ab78b8070?fullscreen=true",
+      "githubLink": null
+    },
+    {
+      "rank": 2,
+      "title": "Battleship Testcase Generator",
+      "description": [
+        "Interactive battleship board generator for unit test creation",
+        "Visual tool to design game states instead of imagining them mentally",
+        "Built with Claude AI to streamline test case development"
+      ],
+      "stack": ["HTML", "CSS", "JavaScript", "Claude AI"],
+      "demoLink": "https://claude.ai/public/artifacts/12e641b4-c52e-4c7f-8cc3-203adb65c545?fullscreen=true",
+      "githubLink": null
     }
   ]
 }
