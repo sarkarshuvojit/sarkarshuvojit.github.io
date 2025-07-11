@@ -6,5 +6,6 @@ export default {
     twitter: "https://twitter.com/sarkarshuvojit",
     linkedin: "https://www.linkedin.com/in/sarkarshuvojit/",
     email: "mailto:shuvojit.s.official@gmail.com",
+    resume: "/Shuvojit_Sarkar__Resume.pdf",
   },
 }

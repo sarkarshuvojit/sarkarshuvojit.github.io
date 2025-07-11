@@ -1,4 +1,4 @@
-import {Email, Github, Linkedin, Stackoverflow, Twitter} from "../components/Icons";
+import {Email, Github, Linkedin, Stackoverflow, Twitter, Download} from "../components/Icons";
 import texts from "../constants/texts";
 
 const Socials = () => {
@@ -31,6 +31,12 @@ const Socials = () => {
       <li>
         <a href={texts.urls.email} target="_blank">
           <Email />
+        </a>
+      </li>
+
+      <li>
+        <a href={texts.urls.resume} target="_blank" download>
+          <Download />
         </a>
       </li>
     </ul>
