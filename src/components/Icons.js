@@ -52,12 +52,22 @@ export function Email() {
   </svg>;
 }
 
-export function Download() {
+export function Download({ width = "48" }) {
   return <svg xmlns="http://www.w3.org/2000/svg" 
-      height="24"
+      height={width}
       viewBox="0 0 24 24"
-      width="24"
+      width={width}
       className="fn__svg replaced-svg">
     <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm9-13h-6v1.99h6v14.03H3V4.99h6V3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+  </svg>;
+}
+
+export function Eye({ width = "48" }) {
+  return <svg xmlns="http://www.w3.org/2000/svg" 
+      height={width}
+      viewBox="0 0 24 24"
+      width={width}
+      className="fn__svg replaced-svg">
+    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
   </svg>;
 }
