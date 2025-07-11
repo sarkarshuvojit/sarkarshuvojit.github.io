@@ -133,7 +133,7 @@ const Projects = () => {
       <div className="container">
         <div className="roww">
           {/* Projects Information */}
-          <div className="resumo_fn_about_info">
+          <div style={{ marginBottom: '20px', marginTop: '50px' }}>
             <div className="about_left">
               <h3>Projects</h3>
               <p>
