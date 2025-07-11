@@ -41,11 +41,6 @@ const Nav = ({ close, trigger }) => {
                   Blogs
                 </a>
               </li>
-              <li style={{ transitionDelay: !trigger ? "0ms" : "1500ms" }}>
-                <a onClick={() => close()} href="#contact">
-                  Contact
-                </a>
-              </li>
             </ul>
           </nav>
           <div className={`nav_footer ${toggle_}`}>

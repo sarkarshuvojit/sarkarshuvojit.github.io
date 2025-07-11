@@ -1,5 +1,4 @@
 import About from "../src/components/About";
-import Contact from "../src/components/Contact";
 import Home from "../src/components/Home";
 import News from "../src/components/News";
 import Projects from "../src/components/Projects";
@@ -30,9 +29,6 @@ const Index = () => {
         {/* News Section */}
         <News />
         {/* /News Section */}
-        {/* Contact Section */}
-        <Contact />
-        {/* /Contact Section */}
       </Layout>
   );
 };
