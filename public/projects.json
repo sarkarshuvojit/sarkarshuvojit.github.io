@@ -2,6 +2,30 @@
   "oss": [
     {
       "rank": 1,
+      "title": "lomboktojson",
+      "description": [
+        "Converts Lombok-generated toString() output to JSON format",
+        "Lightweight utility for debugging and data transformation",
+        "Handles complex nested objects and collections from Java Lombok classes"
+      ],
+      "stack": ["Go", "JSON", "Java Lombok", "CLI", "WASI"],
+      "demoLink": "https://shuvojit.dev/lomboktojson/",
+      "githubLink": "https://github.com/sarkarshuvojit/lomboktojson"
+    },
+    {
+      "rank": 2,
+      "title": "k8s-secrets-encoder-decoder",
+      "description": [
+        "Encode and decode Kubernetes secrets files with ease",
+        "Simplifies management of base64-encoded secret values",
+        "Developer-friendly tool for Kubernetes configuration management"
+      ],
+      "stack": ["TypeScript", "Go", "Base64", "CLI"],
+      "demoLink": "https://shuvojit.dev/k8s-secrets-encoder-decoder/",
+      "githubLink": "https://github.com/sarkarshuvojit/k8s-secrets-encoder-decoder"
+    },
+    {
+      "rank": 3,
       "title": "kafka-sync-proxy",
       "description": [
         "HTTP-to-Kafka bridge that enables synchronous communication patterns",
@@ -13,7 +37,7 @@
       "githubLink": "https://github.com/sarkarshuvojit/kafka-sync-proxy"
     },
     {
-      "rank": 2,
+      "rank": 4,
       "title": "webhook-load-tester",
       "description": [
         "Declarative load testing tool for asynchronous webhook-based APIs",
@@ -25,19 +49,7 @@
       "githubLink": "https://github.com/sarkarshuvojit/webhook-load-tester"
     },
     {
-      "rank": 3,
-      "title": "lomboktojson",
-      "description": [
-        "Converts Lombok-generated toString() output to JSON format",
-        "Lightweight utility for debugging and data transformation",
-        "Handles complex nested objects and collections from Java Lombok classes"
-      ],
-      "stack": ["Go", "JSON", "Java Lombok", "CLI"],
-      "demoLink": "https://shuvojit.dev/lomboktojson/",
-      "githubLink": "https://github.com/sarkarshuvojit/lomboktojson"
-    },
-    {
-      "rank": 4,
+      "rank": 5,
       "title": "dirseq",
       "description": [
         "Lightweight CLI tool for generating sequential numbers unique to each directory",
@@ -47,18 +59,6 @@
       "stack": ["Go", "CLI", "File System"],
       "demoLink": null,
       "githubLink": "https://github.com/sarkarshuvojit/dirseq"
-    },
-    {
-      "rank": 5,
-      "title": "k8s-secrets-encoder-decoder",
-      "description": [
-        "Encode and decode Kubernetes secrets files with ease",
-        "Simplifies management of base64-encoded secret values",
-        "Developer-friendly tool for Kubernetes configuration management"
-      ],
-      "stack": ["TypeScript", "Kubernetes", "Base64", "CLI"],
-      "demoLink": null,
-      "githubLink": "https://github.com/sarkarshuvojit/k8s-secrets-encoder-decoder"
     },
     {
       "rank": 6,
