@@ -3,16 +3,18 @@ import Home from "../src/components/Home";
 import News from "../src/components/News";
 import Projects from "../src/components/Projects";
 import Layout from "../src/layouts/Layout";
+import { getAllPosts } from "../lib/posts";
+import { getAllProjects } from "../lib/projects";
 
 
-const Index = () => {
+const Index = ({ posts, projects }) => {
   console.log("Render index");
   return (
       <Layout>
         <Home />
         {/* /Home Section */}
         {/* Projects Section */}
-        <Projects />
+        <Projects projects={projects} />
         {/* /Projects Section */}
         {/* About Section */}
         <About />
@@ -27,14 +29,24 @@ const Index = () => {
         {/* <Customers /> */}
         {/* /Customers Section */}
         {/* News Section */}
-        <News />
+        <News posts={posts} />
         {/* /News Section */}
       </Layout>
   );
 };
 
-export const getStaticProps= async () => {
-  return { props: {}};
+export const getStaticProps = async () => {
+  const [posts, projects] = await Promise.all([
+    getAllPosts(),
+    getAllProjects()
+  ]);
+  
+  return { 
+    props: {
+      posts,
+      projects
+    }
+  };
 }
 
 export default Index;

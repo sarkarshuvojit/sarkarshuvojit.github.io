@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ExternalLink, GithubSmall } from "./Icons";
 
 const ProjectItem = ({ project }) => {
@@ -89,29 +89,12 @@ const ProjectItem = ({ project }) => {
   );
 };
 
-const Projects = () => {
+const Projects = ({ projects }) => {
   const [toggleList, setToggleList] = useState("tab1");
-  const [projectsData, setProjectsData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const projectsData = projects;
   const activeList = (value) => (value === toggleList ? "active" : "");
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch('/projects.json');
-        const data = await response.json();
-        setProjectsData(data);
-      } catch (error) {
-        console.error('Error fetching projects:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  if (loading) {
+  if (!projectsData) {
     return (
       <section id="projects">
         <div className="container">

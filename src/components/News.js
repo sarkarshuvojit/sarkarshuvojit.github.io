@@ -1,20 +1,7 @@
-import React, {useEffect, useState} from "react";
-import {getAllPosts} from "../services/posts";
+import React from "react";
 
-const News = () => {
+const News = ({ posts }) => {
   console.log("Render News")
-  const [posts, setPosts] = useState([])
-  const [error, setError] = useState(null)
-
-  if (error) {
-    console.error("Error:", error);
-  }
-
-  useEffect(() => {
-    getAllPosts()
-      .then(_posts => setPosts(_posts))
-      .catch(err => setError(err))
-  }, []);
 
   return (
     <section id="news">
