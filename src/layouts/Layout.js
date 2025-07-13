@@ -23,7 +23,61 @@ const Layout = ({ children }) => {
   return (
     <Fragment>
       <Head>
-        <title>{texts.appTitle}</title>
+        <title>Shuvojit Sarkar - Backend Engineer & Software Developer</title>
+        <meta name="description" content="Backend engineer specializing in distributed systems, APIs, and scalable architectures. Experienced in Go, Python, JavaScript, DevOps, and cloud technologies." />
+        <meta name="keywords" content="Shuvojit Sarkar, backend engineer, software developer, full stack developer, distributed systems, APIs, Go, Python, JavaScript, React, DevOps, cloud computing, software engineering" />
+        <meta name="author" content="Shuvojit Sarkar" />
+        
+        <meta property="og:title" content="Shuvojit Sarkar - Backend Engineer & Software Developer" />
+        <meta property="og:description" content="Backend engineer specializing in distributed systems, APIs, and scalable architectures. Experienced in Go, Python, JavaScript, DevOps, and cloud technologies." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sarkarshuvojit.github.io" />
+        <meta property="og:image" content="https://sarkarshuvojit.github.io/img/dp_hd.png" />
+        <meta property="og:site_name" content="Shuvojit Sarkar Portfolio" />
+        <meta property="og:locale" content="en_US" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Shuvojit Sarkar - Backend Engineer & Software Developer" />
+        <meta name="twitter:description" content="Backend engineer specializing in distributed systems, APIs, and scalable architectures. Building scalable solutions with modern technologies." />
+        <meta name="twitter:image" content="https://sarkarshuvojit.github.io/img/dp_hd.png" />
+        <meta name="twitter:creator" content="@sarkarshuvojit" />
+        <meta name="twitter:site" content="@sarkarshuvojit" />
+        
+        <meta name="theme-color" content="#000000" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Shuvojit Sarkar",
+            jobTitle: "Backend Engineer",
+            description: "Backend engineer specializing in distributed systems, APIs, and scalable architectures",
+            url: "https://sarkarshuvojit.github.io",
+            image: "https://sarkarshuvojit.github.io/img/dp_hd.png",
+            sameAs: [
+              "https://github.com/sarkarshuvojit",
+              "https://linkedin.com/in/sarkarshuvojit",
+              "https://twitter.com/sarkarshuvojit",
+              "https://stackoverflow.com/users/2976015/shuvojit"
+            ],
+            knowsAbout: [
+              "Backend Development",
+              "Distributed Systems",
+              "API Design",
+              "DevOps",
+              "Cloud Computing",
+              "Software Engineering",
+              "Go Programming",
+              "Python",
+              "JavaScript"
+            ],
+            worksFor: {
+              "@type": "Organization",
+              name: "Software Engineering"
+            }
+          })}
+        </script>
       </Head>
       <div className="resumo_fn_wrapper">
         {/* MODALBOX */}

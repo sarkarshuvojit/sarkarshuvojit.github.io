@@ -9,7 +9,15 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="robots" content="index, follow" />
+          <meta name="googlebot" content="index, follow" />
+          <link rel="canonical" href="https://sarkarshuvojit.github.io" />
+          <link rel="icon" href="/img/favicon.ico" />
+          <link rel="apple-touch-icon" href="/img/dp_ico.png" />
+        </Head>
         <body>
           <Main />
           <NextScript />

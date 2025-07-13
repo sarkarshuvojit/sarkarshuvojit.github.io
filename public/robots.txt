@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sarkarshuvojit.github.io/sitemap.xml
+
+# Allow indexing of important pages
+Allow: /
+Allow: /img/
+Allow: /css/
+Allow: /js/
+
+# Block unnecessary files
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /next.config.js
+Disallow: /package.json
+Disallow: /yarn.lock
+
+# Crawl-delay
+Crawl-delay: 1

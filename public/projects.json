@@ -13,18 +13,6 @@
       "githubLink": "https://github.com/sarkarshuvojit/lomboktojson"
     },
     {
-      "rank": 2,
-      "title": "k8s-secrets-encoder-decoder",
-      "description": [
-        "Encode and decode Kubernetes secrets files with ease",
-        "Simplifies management of base64-encoded secret values",
-        "Developer-friendly tool for Kubernetes configuration management"
-      ],
-      "stack": ["TypeScript", "Go", "Base64", "CLI"],
-      "demoLink": "https://shuvojit.dev/k8s-secrets-encoder-decoder/",
-      "githubLink": "https://github.com/sarkarshuvojit/k8s-secrets-encoder-decoder"
-    },
-    {
       "rank": 3,
       "title": "kafka-sync-proxy",
       "description": [
